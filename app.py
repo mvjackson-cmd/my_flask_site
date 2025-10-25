@@ -55,5 +55,6 @@ def contact():
     return render_template("contact.html", flash=flash_msg, recent=read_recent())
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False, host="127.0.0.1", port=5001)
+    # Local testing only
+    app.run(debug=True)
 
