@@ -1,0 +1,20 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return "<h1>About</h1><p>About page is working.</p>"
+
+@app.route("/api/hello")
+def hello_api():
+    return {"message": "Hello from your Flask API!"}
+
+if __name__ == "__main__":
+    # use_reloader=False avoids the macOS bug; use a fresh port (5001)
+    app.run(debug=True, use_reloader=False, host="127.0.0.1", port=5001)
+

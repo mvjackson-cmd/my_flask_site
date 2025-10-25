@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <!-- Hero section -->
+  <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+    <div class="container py-5">
+      <h1 class="display-6 fw-bold">Hi, I’m Marc</h1>
+      <p class="col-lg-8 fs-6 text-muted">
+        I’m learning web development. This site is built with Python + Flask.
+      </p>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Contact me</a>
+    </div>
+  </div>
+
+  <!-- Project cards -->
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Project One</h5>
+          <p class="card-text text-muted">Short description goes here.</p>
+          <a href="#" class="btn btn-outline-primary btn-sm disabled">Coming soon</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Project Two</h5>
+          <p class="card-text text-muted">Short description goes here.</p>
+          <a href="#" class="btn btn-outline-primary btn-sm disabled">Coming soon</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Project Three</h5>
+          <p class="card-text text-muted">Short description goes here.</p>
+          <a href="#" class="btn btn-outline-primary btn-sm disabled">Coming soon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+

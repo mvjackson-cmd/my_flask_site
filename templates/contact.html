@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-7">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="h4 mb-3">Contact</h1>
+
+          {% if flash %}
+            <div class="alert alert-success">{{ flash }}</div>
+          {% endif %}
+
+          <form method="POST" action="{{ url_for('contact') }}">
+            <div class="mb-3">
+              <label class="form-label">Your name</label>
+              <input name="name" class="form-control" required placeholder="Marc">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea name="message" class="form-control" rows="4" required placeholder="Write something..."></textarea>
+            </div>
+
+            <button class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 mt-3 mt-lg-0">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h6 mb-3">Recent messages</h2>
+          {% if recent and recent|length > 0 %}
+            <ul class="list-group">
+              {% for row in recent %}
+                <li class="list-group-item">
+                  <strong>{{ row.name }}</strong>
+                  <div class="small text-muted">{{ row.timestamp }}</div>
+                  <div>{{ row.message }}</div>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="text-muted mb-0">No messages yet.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

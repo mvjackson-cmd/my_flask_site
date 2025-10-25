@@ -1,0 +1,6 @@
+/* Gentle polish you can tweak anytime */
+body { min-height: 100vh; }
+.card { border: 0; }
+.navbar-brand { font-weight: 600; }
+
+
